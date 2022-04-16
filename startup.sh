@@ -1,8 +1,8 @@
 #!/bin/bash
 
-/usr/bin/pg_ctl "12" main start
+service postgresql start
 su - postgres -c 'psql postgres'
-/usr/bin/pg_ctl "12" main stop
+service postgresql start
 
 # Normal startup
 /sbin/my_init

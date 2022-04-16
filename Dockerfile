@@ -20,11 +20,10 @@ WORKDIR /
 RUN git clone https://github.com/AbdullahO/tspdb.git
 RUN pip3 install tspdb/.
 WORKDIR /tspdb/extension_py3
-COPY tspdb.control /usr/share/postgresql/12/extension/tspdb.control
-COPY tspdb--0.0.1.sql /usr/share/postgresql/12/extension/tspdb--0.0.1.sql
-RUN pwd 
-RUN ls -al
+RUN cp tspdb.control /usr/share/postgresql/12/extension/tspdb.control \
+    && cp tspdb--0.0.1.sql /usr/share/postgresql/12/extension/tspdb--0.0.1.sql
+
 WORKDIR /
 ADD startup.sh ./
-RUN chmod +x star startup.sh
+RUN chmod +x startup.sh
 ENTRYPOINT ["/startup.sh"]
