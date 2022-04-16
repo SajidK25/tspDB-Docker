@@ -1,12 +1,12 @@
-TSP-DB
+# Docker image od TSP-DB
 
-# How to use this images
-## First clone the repo
+## How to use this images
+### First clone the repo
 ```
 git clone https://github.com/SajidK25/tspDB-Docker.git
 cd tspDB-Docker
 ```
-## Build image
+### Build image
 ```
 docker build -t tspdb .
 ```
@@ -19,7 +19,7 @@ docker build -t tspdb .
         <none>       <none>    4124eb1c189d   28 minutes ago   1.28GB
         ubuntu       focal     825d55fb6340   10 days ago      72.8MB
     ```
-## Run the container
+### Run the container
 ```
 docker run -it tspdb bash
 ```
